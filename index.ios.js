@@ -74,7 +74,7 @@ class AwesomeProject extends Component {
 
   renderMovie(movie) {
     return (
-        <Movie movie={movie} styles={styles}
+        <Movie movie={movie}
                movieStyles={styles.container}
                imageStyles={styles.thumbnail}
                movieDescriptionStyles={styles.rightContainer}
