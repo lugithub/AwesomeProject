@@ -13,11 +13,13 @@ import React, {
   View
 } from 'react-native';
 
+import {Movie} from './movie';
+
 /**
  * For quota reasons we replaced the Rotten Tomatoes' API with a sample data of
  * their very own API that lives in React Native's Github repo.
  */
-var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
+const REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
 
 class AwesomeProject extends Component {
   constructor(props) {
@@ -72,16 +74,12 @@ class AwesomeProject extends Component {
 
   renderMovie(movie) {
     return (
-        <View style={styles.container}>
-          <Image
-              source={{uri: movie.posters.thumbnail}}
-              style={styles.thumbnail}
-              />
-          <View style={styles.rightContainer}>
-            <Text style={styles.title}>{movie.title}</Text>
-            <Text style={styles.year}>{movie.year}</Text>
-          </View>
-        </View>
+        <Movie movie={movie} styles={styles}
+               movieStyles={styles.container}
+               imageStyles={styles.thumbnail}
+               movieDescriptionStyles={styles.rightContainer}
+               movieTitleStyles={styles.title}
+               movieYearStyles={[styles.year, styles.year2, null && styles.year3]}></Movie>
     );
   }
 }
@@ -109,6 +107,12 @@ const styles = StyleSheet.create({
   },
   year: {
     textAlign: 'center',
+  },
+  year2: {
+    fontSize: 5,
+  },
+  year3: {
+    fontSize: null,
   },
   listView: {
     paddingTop: 20,
