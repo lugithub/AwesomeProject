@@ -13,8 +13,13 @@ export class Movie extends Component {
                 <Image
                     source={{uri: this.props.movie.posters.thumbnail}}
                     style={this.props.imageStyles}
-                    />
+                    >
+                    <Text>Inside</Text>
+                </Image>
                 <View style={this.props.movieDescriptionStyles}>
+                    <Image source={require('./broccoli_PNG2823.png')}
+                           style={this.props.iconStyles}>
+                    </Image>
                     <Text style={this.props.movieTitleStyles}>{this.props.movie.title}</Text>
                     <Text style={this.props.movieYearStyles}>{this.props.movie.year}</Text>
                 </View>

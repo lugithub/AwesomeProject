@@ -77,6 +77,7 @@ class AwesomeProject extends Component {
         <Movie movie={movie}
                movieStyles={styles.container}
                imageStyles={styles.thumbnail}
+               iconStyles={styles.icon}
                movieDescriptionStyles={styles.rightContainer}
                movieTitleStyles={styles.title}
                movieYearStyles={[styles.year, styles.year2, null && styles.year3]}></Movie>
@@ -95,6 +96,10 @@ const styles = StyleSheet.create({
   thumbnail: {
     width: 53,
     height: 81,
+  },
+  icon: {
+    width: 20,
+    height: 20,
   },
   rightContainer: {
     flex: 1,
